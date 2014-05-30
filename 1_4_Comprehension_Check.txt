@@ -1,0 +1,28 @@
+1.Is Python a high- or low-level programming language? Explain what this distinction means.
+Python is a high-level programming language. High level languages are more relatable to human thought and speech. They are easier to write, and read
+and allow for easier error checking, and are also portable. A computer cannot directly execute instructions from a high level language, it must first 
+process the language into a low-level language (called a machine or assembly language) before execution. Machine language is directly executed by the computer
+and is faster but is difficult to grasp and update efficiently. 
+
+2.What’s the difference between an interpreted and compiled language? Which one is Python?
+An interpreted language, like Python, is one where an interpreter reads a high-level programm and then executes it, 
+usually by reading a few lines at a time and then performing computations, repeating until all the hl language is read.
+A compiled language uses a compiler to read the high-level code fully, and then run the program. The compiler takes the high-level code(the source code), 
+and translates it into the object code (the executable), which can then be run over and over without further compiling.
+
+3. Explain the two environments that Python code can be run in: shell mode vs. program mode.
+In shell mode--> type expressions into a Python shell, and the interpreter immediately shows the result. The prompt indicates the interpreter is ready for instructions. 
+In program mode--> you can type all the code into a file, and then have the interpreter execute all the instructions in the file at one time. 
+
+4. What’s the ending for Python program names?
+Python program files must end with a '.py'. 
+
+5. What is a program? A sequence of instructions that specify how to perform a computation. 
+
+6. What is debugging? Finding and fixing programming errors
+
+7. What are syntax errors? Errors concerning the rules and structure of the language being used to write the program, usually found by the compiler/interpreter.
+
+8. What’s a runtime error? Errors that do not appear until you run the program, also known as exceptions.
+
+9. What’s a semantic error? Semantic errors occur when the program runs, but not as intended. Difficult to catch, must work backward.
