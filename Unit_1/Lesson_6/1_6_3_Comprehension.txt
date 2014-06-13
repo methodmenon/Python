@@ -1,0 +1,8 @@
+What are side effects?
+Side effects are un-intended changes made to variables and objects while passing them through defined functions
+
+Why are complex objects susceptible to side effects in Python?
+They are mutable and hence changable
+
+Based on the examples you tried in the "What gets affected?" section above, for which data types do you need to worry about side effects?
+Lists and Dictionaries

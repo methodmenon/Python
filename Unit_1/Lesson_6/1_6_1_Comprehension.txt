@@ -1,0 +1,56 @@
+Explain in your own words what a class is (not just in Python, but in general).
+A class is the abstract idea of a particular object.
+
+What is an instance?
+An instance is the tangible real-world representation of a class. The instances's attributes and methods have already been set according to it's class.
+
+What's the relationship between a class and an instance?
+It is the tangible real-world representation of a class
+
+What's the syntax for defining a new class in Python?
+class Class_Name():
+	.....
+
+What's the spelling convention for class names?
+Capitlize the first letter
+
+How do you instantiate (that is, make an instance of) a class?
+Assing a class to a variable
+ex--> my_instance = Class_Name(params)
+
+How do you access the attributes and behaviors of a class instance (for instance, my_instace = MyClass())?
+Use the "."(dot) operator
+ex.--> my_instance.MyClass_method or my_instance.MyClass_attribute
+
+What's a method?
+A method is a function that has been defined inside a class
+
+What is the purpose of self in Python classes?
+The self paramter is used in the method definitions of a class, which takes the value of the instance calling the method in question.
+This makes the method return values that are related only to the instance that calls it.
+
+What is the purpose of the __init__ method? Give an example of how you could use it.
+The __init__ method allows for a quicker way to create an instance of a class, instead of defining each attribute for each instance. 
+Example:
+class My_Class:
+      def __init__(self, name, color):
+	self.name = name
+	self.color = color
+
+>>> my_instance = My_Class("Vince", "Blue")
+
+
+How can you use parent classes and inheritance to avoid code duplication?
+define the parent class, and then define the child class (passing in the parent class as a parameter)
+Example:
+class Parent(object):
+      .......
+
+class Child(Parent):
+      .......
+
+Can child classes override properties of their parents?
+Yes
+
+What's up with the object in Python 2.7+ class definitions -- for instance class Foo(object):?
+Object class is the parent of all classes in Python, so it's a good habit to have

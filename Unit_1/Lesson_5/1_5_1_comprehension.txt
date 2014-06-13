@@ -1,0 +1,17 @@
+What is a function?
+A grouping, or naming of a block of code that does something. You input args/parms into this code to do something.
+Allows callers of the function to supply inputs and get outputs, without having to understand how the function is implemented.
+
+What is the syntax for defining functions in Python?
+def my_function(parameter1, parameter2, etc):
+	statements relating to what the function is supposed to do
+
+What's the difference between x = my_func() and x = my_func?
+	x = my_func() --> means the variable x will refer to a value of the output from my_func()
+	x = my_func --> means that x is an alias for the function, my_func
+
+Can you call a function in another function?
+	Yes
+
+What is a method signature?
+	A method signature is the set of arguements required by a function. 
