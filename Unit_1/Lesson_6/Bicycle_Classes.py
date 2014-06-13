@@ -26,3 +26,49 @@ class Bicycle_Model:
 	def total_cost(self):
 		total_cost = (self.frame.production_cost) + (2 * self.wheel.production_cost)
 		return total_cost
+
+class Manufacturers:
+	def __init__(self, name, model, markup_percentage):
+		self.name = name
+		self.model = model
+		self.markup_percentage = markup_percentage
+
+	def markup_cost(self):
+		markup_percentage = (self.markup_percentage/100.0)
+		markup_cost = self.model.total_cost * (1 + markup_percentage)
+		print markup_cost
+
+
+class Bike_Shops:
+	inventory = {}
+	sold = {}
+	def __init__(self, name, manufacturer1, manufacturer2, inventory):
+		self.name = name
+		self.manufacturer1 = manufacturer1
+		self.manufacturer2 = manufacturer2
+		self.inventory = inventory
+
+	def profit_per_sale(self, markup):
+		markup = (1 + (self.markup/100.0))
+		profit = (self.markup)*(self.manufacturer.markup_cost) - (self.manufacturer.markup_cost)
+
+	def inventory_change(self, model):
+		if self.inventory[model] > 0:
+			self.sold[model] += 1
+			self.inventory[model] -= 1
+		else:
+			print("Item not available")
+
+	def total_profit(self):
+		profit = 0
+		for model in self.sold.keys():
+			profit += 
+
+
+
+
+
+	
+
+
+
