@@ -1,19 +1,23 @@
-class Wheels:
-	#w_type = [type1, type2, type3]
+class Wheels(object):
+    #w_type = [type1, type2, type3]
 	def __init__(self, name, weight, production_cost):
 		self.name = name
 		self.weight = weight
 		self.production_cost = production_cost
 
-class Frames:
+class Frame(object):
 	#f_type = [aluminum, carbon, steel]
 	def __init__(self, weight, production_cost, f_type):
 		self.weight = weight
 		self.production_cost = production_cost
 		self.f_type = f_type
 
-class Bicycle_Model:
-	def __init__(self, name, manufacturer, wheel, frame):
+class Manufacturer(object):
+	def __init__(self, name, markup):
+		self.markup = (1 + (markup/100.0))
+
+class Bicycle_Model(object):
+	def __init__(self, name, wheel, frame, manufacturer):
 		self.name = name
 		self.manufacturer = manufacturer
 		self.wheel = wheel
@@ -24,45 +28,56 @@ class Bicycle_Model:
 		return total_weight
 
 	def total_cost(self):
+		self.frame.production_cost = (self.frame.production_cost) * (self.manufacturer.markup)
+		self.wheel.production_cost = (self.wheel.production_cost) * (self.manufacturer.markup)
 		total_cost = (self.frame.production_cost) + (2 * self.wheel.production_cost)
 		return total_cost
-
-class Manufacturers:
-	def __init__(self, name, model, markup_percentage):
+		
+class Bike_Shop(object):
+	inventory = []
+	sold_bikes = []
+	def __init__(self, name, margin):
 		self.name = name
-		self.model = model
-		self.markup_percentage = markup_percentage
+		self.margin = (1 + (margin/100.0))
 
-	def markup_cost(self):
-		markup_percentage = (self.markup_percentage/100.0)
-		markup_cost = self.model.total_cost * (1 + markup_percentage)
-		print markup_cost
-
-
-class Bike_Shops:
-	inventory = {}
-	sold = {}
-	def __init__(self, name, manufacturer1, manufacturer2, inventory):
-		self.name = name
-		self.manufacturer1 = manufacturer1
-		self.manufacturer2 = manufacturer2
-		self.inventory = inventory
-
-	def profit_per_sale(self, markup):
-		markup = (1 + (self.markup/100.0))
-		profit = (self.markup)*(self.manufacturer.markup_cost) - (self.manufacturer.markup_cost)
-
-	def inventory_change(self, model):
-		if self.inventory[model] > 0:
-			self.sold[model] += 1
-			self.inventory[model] -= 1
-		else:
-			print("Item not available")
+##not part of 6/22 check##########################
+	def bike_sale_price(self, bike):
+		bike_cost = bike.total_cost()
+		bike_cost = bike_cost * self.margin
+		return	 bike_cost
+##not part of 6/22 check##########################
+	def sell_bike(self, bike):
+		self.sold_bikes.append(bike)
+		return self.sold_bikes
 
 	def total_profit(self):
-		profit = 0
-		for model in self.sold.keys():
-			profit += 
+		total_profit = 0.0
+		for bike in self.sold_bikes:
+			bike_cost = bike.total_cost()
+			total_profit += (bike_cost * self.margin) - (bike_cost)
+		print("The total profit of bikes sold is {}".format(total_profit))
+
+#everything good until this point 6/22
+class Customer(object):
+	def __init__(self, name, funds):
+		self.name = name
+		self.funds = funds
+
+	def purchase_bike(self, bike, shop):
+		cost_of_bike = shop.bike_sale_price(bike)
+		if (self.funds >= cost_of_bike): #why will it not work properly for (cost_of_bike >= self.funds)
+			funds_left = self.funds - cost_of_bike
+			print ("{} purchased, you have {}".format(bike.name, funds_left))
+		else:
+			print("You do not have enough money.")
+
+
+
+
+
+
+
+
 
 
 
