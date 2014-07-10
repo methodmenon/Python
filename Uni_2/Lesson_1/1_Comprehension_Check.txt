@@ -1,0 +1,23 @@
+How do you create an argument parser?
+i) import the argparse module (the recommended command line parser)
+ii) create an instance of the ArgumentParser object via argparser.ArgumentParser
+
+How do you find out the command line arguments an app using argparse takes?
+i) run the python code including a -h after the .py
+
+
+What is the difference between a positional and an optional argument?
+i) A positional argument is required when running the code from the command line
+ii) An optional argument is not required to run the script, but can change the output if passed
+
+How would you add an optional argument for receiving an integer?
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_arg("-i", "--integer", type = int, help = "recieve the given integer")
+
+
+What does the action parameter of add_argument do?
+Specifies the basic type of action to be taken when this argument is encountered at the command line.
+
+How do you add a default value for an argument?
+Assign a value to the default parameter in the add_argument() method.
