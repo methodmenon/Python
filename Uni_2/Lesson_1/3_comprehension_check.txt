@@ -1,0 +1,26 @@
+How would you create object to read and write csv files?
+i) object that reads a csv file can be done via:
+	reader = csv.reader(open("file_name", "rb"))
+ii)object that writes to a csv_file can be done via:
+	writer = csv.writer(open("file_name", "wb"))
+
+How do you iterate over rows when reading a csv file?
+   reader = csv.reader(open(file_obj, "rb"))
+   for row in reader:
+       print(" ".join(row))
+
+How do you write a row to a csv file?
+	with open(path, "wb") as csv_file:
+		writer = csv.writer(csv_file, dilimiter = ',')
+        for line in data:
+        	writer.writerow(line)
+
+What is the difference between the reader/writer and DictReader/DictWriter objects?
+The DictReader/DictWriter objects act as dictionaries with key/value pairs
+
+What does the fieldnames parameter represent in the DictReader and DictWriter constructor?
+The keys for the dict objects
+
+How would you write a header line to a CSV file?
+   let writer be a dictionary writer object, then you use the following expression to write a header line to a CSV file
+   --> writer.writeheader()

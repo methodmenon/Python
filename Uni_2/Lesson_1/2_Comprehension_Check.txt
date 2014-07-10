@@ -1,0 +1,22 @@
+How do you open a file in Python in read only mode? How do you open a file in write mode?
+i)  my_file = open("file_name", "r")
+ii) my_file = open("file_name", "w")
+
+If you do f = open('myfile.txt', 'r'), will your variable f be a string?
+No, f will be a file object
+
+How do you read a file that you’ve opened?
+my_file.read()
+
+How do you write to a file object?
+my_file.write(string)
+
+Why is it critical that you explicitly close your files, especially when you’re writing to one?
+The I/O data is buffered and is held in a temporary location before being written or read to a file. In order to have the data reach the target file, one must close the file.
+
+How can you use with and as to open a file and assign its contents to a variable, in order to avoid having to explicitly close the file object?
+i) with open("text.txt", "w") as my_file:
+	 my_file.write("these words")
+
+What does it mean when we say that the data in a file object is buffered?
+It is saved in a temporary location
